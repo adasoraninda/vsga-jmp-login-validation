@@ -47,12 +47,17 @@ public class HomeActivity extends AppCompatActivity {
         setUpActionBar();
 
         homeFile.readLoginFile(data -> {
-            inputUsername.setText(data.getUserName());
-            inputPassword.setText(data.getPassword());
-            inputEmail.setText(data.getEmail());
-            inputFullName.setText(data.getFullName());
-            inputSchool.setText(data.getSchool());
-            inputAddress.setText(data.getAddress());
+            if (data != null) {
+                inputUsername.setText(data.getUserName());
+                inputPassword.setText(data.getPassword());
+                inputEmail.setText(data.getEmail());
+                inputFullName.setText(data.getFullName());
+                inputSchool.setText(data.getSchool());
+                inputAddress.setText(data.getAddress());
+            } else {
+                Toast.makeText(this, getString(R.string.home_error_read_message), Toast.LENGTH_SHORT).show();
+            }
+
         });
 
         buttonDeleteAccount.setOnClickListener(v -> showAlertDialog(
@@ -69,11 +74,21 @@ public class HomeActivity extends AppCompatActivity {
 
     private void logoutHome(String username) {
         if (username != null) {
-            InternalFile.deleteLoginFile(username, this);
+            if (!InternalFile.deleteLoginFile(username, this)) {
+                Toast.makeText(
+                        this,
+                        getString(R.string.error_delete_account_message),
+                        Toast.LENGTH_SHORT).show();
+            }
         }
-        InternalFile.deleteLoginFile(this);
-        LoginActivity.navigate(this);
-        finishAffinity();
+
+        if (InternalFile.deleteLoginFile(this)) {
+            LoginActivity.navigate(this);
+            finishAffinity();
+        } else {
+            Toast.makeText(this, getString(R.string.error_logout_message), Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override
