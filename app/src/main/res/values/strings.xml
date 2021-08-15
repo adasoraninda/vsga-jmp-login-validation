@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Login Validation</string>
+    <string name="proyek_2">Proyek 2</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="address">Alamat Tinggal</string>
+    <string name="school">Asal Sekolah</string>
+    <string name="fullname">Nama Lengkap</string>
+    <string name="save">Simpan</string>
+    <string name="home">Halaman Depan</string>
+    <string name="logout">Logout</string>
+    <string name="logout_message">Apakah Anda Yakin Ingin Logout?</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
+
+    <string name="login_success_message">Login berhasil</string>
+    <string name="login_error_message">Login gagal: Masalah memasukan data ke file</string>
+    <string name="login_error_password_message">Login gagal: Password Tidak Sesuai</string>
+    <string name="login_error_user_message">Login gagal: User Tidak Ditemukan</string>
+
+    <string name="register_success_message">Register berhasil</string>
+    <string name="register_error_message">Register gagal</string>
+
+    <string name="home_error_read_message">Gagal medapatkan data</string>
+
+    <string name="username_invalid_message">Username Tidak Valid</string>
+    <string name="password_invalid_message">Password Tidak Valid</string>
+    <string name="email_invalid_message">Email Tidak Valid</string>
+    <string name="fullname_invalid_message">Nama Panjang Tidak Valid</string>
+    <string name="school_invalid_message">Asal Sekolah Tidak Valid</string>
+    <string name="address_invalid_message">Alamat Tidak Valid</string>
+
+    <string name="delete_account">Hapus Akun</string>
+    <string name="delete_account_message">Apakah Yakin Ingin Menghapus Akun?</string>
+</resources>
