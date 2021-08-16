@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 
+// location data/data/packageName/
 public abstract class InternalFile {
 
     private final Context context;
